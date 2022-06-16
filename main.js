@@ -1,25 +1,19 @@
 "use strict"
 
-
-
 /*Header*/
 /*Menu Lateral Hamburguer*/
 
 const hamburguer = document.getElementById("hamburguer")
-const lateralBar = document.getElementById("lateral-bar")
+const lateralBar = document.getElementsByClassName("lateral-bar")
 const cerrar = document.getElementById("cerrar")
 
-if(hamburguer){
-    hamburguer.addEventListener("click", () => {
-        lateralBar.classList.add("active")
-    })
-}
+hamburguer.addEventListener("click", () => {
+    lateralBar.classList.remove("active")
+})
+cerrar.addEventListener("click", () => {
+    lateralBar.classList.add("active")
+})
 
-if(cerrar){
-    cerrar.addEventListener("click", () => {
-        lateralBar.classList.remove("active")
-    })
-}
 /*Menu Login */
 const login = document.getElementById("login");
 const user = document.getElementById("user");
