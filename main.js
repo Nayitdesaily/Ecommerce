@@ -4,7 +4,7 @@
 /*Menu Lateral Hamburguer*/
 
 const hamburguer = document.getElementById("hamburguer")
-const lateralBar = document.getElementsByClassName("lateral-bar")
+const lateralBar = document.querySelector(".lateral-bar")
 const cerrar = document.getElementById("cerrar")
 
 hamburguer.addEventListener("click", () => {
