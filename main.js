@@ -233,7 +233,7 @@ cartShopBox.getElementsByClassName("cart-quantity")[0].addEventListener("change"
 
 /*Local Storage */
 
-/*
+
 let addCardBtn = document.getElementsByClassName("icon-card");
 let items = [ ];
 for (let i=0; i<addCardBtn.length; i++){
@@ -266,79 +266,5 @@ for (let i=0; i<addCardBtn.length; i++){
             alert("storage is not working")
         }
     })
-}*/
-
-/*let numberShopCart = document.getElementsByClassName("number-shopping")
-let no = 0;
-JSON.parse(localStorage.getItem("items")).map(data =>{
-    no = no + data.no
-})
-numberShopCart.innerHTML = no*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*function saveLocalStorage(){
-    let cartContentStorage = document.querySelector(".cart-content")
-    localStorage.setItem("list", JSON.stringify(cartContentStorage.outerHTML))
-    
-    }
-    
-    function loadLocalStorage(){
-   console.log  (JSON.parse(localStorage.getItem("list")))
-    }*/
-    /*document.addEventListener("DOMContentLoaded", () =>{
-        savelocalstorage()
-        loadlocalstorage()
-    })
-      function savelocalstorage(){
-        let cartContentList = document.getElementById("itemstorage");
-        localStorage.setItem("list", JSON.stringify(cartContentList.outerHTML));
-      }
-
-      function loadlocalstorage(){
-        console.log(JSON.parse(localStorage.getItem("list")));
-      }*/
-      
-/*
-//let likeBtn = document.querySelector("#btn-like")
-//let small = document.querySelector("small")
-
-
-    if( window.localStorage.getItem ( "myStorage")  ){
-        contadorLike = JSON.parse( window.localStorage.getItem ( "myStorage") )
-        small.textContent = `Likes ${contadorLike} `
-
-        likeBtn.addEventListener( "click", (eventoData) =>{
-            contadorLike++
-            small.textContent = `Likes ${contadorLike} `
-            window.localStorage.setItem( "myStorage", JSON.stringify( contadorLike ) )
-        })
-    }else{
-        contadorLike = 0
-        likeBtn.addEventListener( "click", (eventoData) =>{
-        contadorLike++
-        small.textContent = `Likes ${contadorLike} `
-        let myStorage = "Likes"
-        window.localStorage.setItem( "myStorage", JSON.stringify( contadorLike ) )
-        let value = window.localStorage.getItem ( "myStorage")
-        console.log ( value )
-        })
 }
-*/
+
