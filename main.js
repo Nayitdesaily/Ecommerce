@@ -137,13 +137,7 @@ for (let i=0; i<quantityValues.length; i++){
 }
 
 
-/*Agregar funcion a boton de compra*/
-let agregarCard = document.getElementsByClassName("icon-card")
-for(let i=0; i<agregarCard.length; i++){
-    let buttonAgregarCard = agregarCard[i];
-    buttonAgregarCard.addEventListener("click", agregarCardClicked)
 
-}
 
 /*Boton Proceder al pago */
 document.getElementsByClassName("btn-buy")[0].addEventListener("click", btnBuyClicked)
@@ -166,8 +160,24 @@ function quantityChanged (event){
     updateTotal();
 }
 
+/*Agregar funcion a boton de compra*/
+let agregarCard = document.getElementsByClassName("icon-card")
+for(let i=0; i<agregarCard.length; i++){
+    let buttonAgregarCard = agregarCard[i];
+    buttonAgregarCard.addEventListener("click", agregarCardClicked)
 
-
+}
+/*Agregar a carrito */
+function agregarCardClicked (event) {
+    let buttonAgregarCard = event.target
+    let choosenProduct = buttonAgregarCard.parentElement
+    let titleProduct = choosenProduct.getElementsByClassName("title-tipo")[0].innerText
+    let priceProductUnit = choosenProduct.getElementsByClassName("precio-product")[0].innerText
+    let imgProduct = choosenProduct.getElementsByClassName("img-card")[0 ].src
+    addProductShop(titleProduct,priceProductUnit,imgProduct)
+    updateTotal()
+}    
+ 
 /*Actualizar Total */
 function updateTotal (){
     let cartContent = document.getElementsByClassName("cart-content")[0]
@@ -202,17 +212,7 @@ function btnBuyClicked (event) {
 
 
 
-/*Agregar a carrito */
-function agregarCardClicked (event) {
-    let buttonAgregarCard = event.target
-    let choosenProduct = buttonAgregarCard.parentElement
-    let titleProduct = choosenProduct.getElementsByClassName("title-tipo")[0].innerText
-    let priceProductUnit = choosenProduct.getElementsByClassName("precio-product")[0].innerText
-    let imgProduct = choosenProduct.getElementsByClassName("img-card")[0 ].src
-    addProductShop(titleProduct,priceProductUnit,imgProduct)
-    updateTotal()
-}    
- 
+
 
 
 function addProductShop(titleProduct,priceProductUnit,imgProduct) {
@@ -244,6 +244,68 @@ cartShopBox.getElementsByClassName("cart-quantity")[0].addEventListener("change"
 }
 
 /*Local Storage */
+
+/*
+let addCardBtn = document.getElementsByClassName("icon-card");
+let items = [ ];
+for (let i=0; i<addCardBtn.length; i++){
+    addCardBtn[i].addEventListener("click", function(e){
+        if(typeof(Storage) !== undefined){
+            let item = {
+                id: i,
+                name: e.target.parentElement.children[2].children[1].textContent,
+                price: e.target.parentElement.children[3].children[1].textContent,
+                no: 1
+                };
+            if(JSON.parse(localStorage.getItem("newlist") === null)){
+                items.push(item);
+                localStorage.setItem("newlist", JSON.stringify(items));
+                
+            }else {
+                let localItems = JSON.parse(localStorage.getItem("newlist"));
+                localItems.map(data =>{
+                    if(item.id == data.id){
+                        item.no = data.no + 1
+                    }else {
+                        items.push(data)
+                    }
+                });
+                items.push(item)
+                localStorage.setItem("newlist", JSON.stringify(items));
+                
+            }
+        }else{  
+            alert("storage is not working")
+        }
+    })
+}*/
+
+/*let numberShopCart = document.getElementsByClassName("number-shopping")
+let no = 0;
+JSON.parse(localStorage.getItem("items")).map(data =>{
+    no = no + data.no
+})
+numberShopCart.innerHTML = no*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*function saveLocalStorage(){
     let cartContentStorage = document.querySelector(".cart-content")
     localStorage.setItem("list", JSON.stringify(cartContentStorage.outerHTML))
@@ -253,7 +315,7 @@ cartShopBox.getElementsByClassName("cart-quantity")[0].addEventListener("change"
     function loadLocalStorage(){
    console.log  (JSON.parse(localStorage.getItem("list")))
     }*/
-    document.addEventListener("DOMContentLoaded", () =>{
+    /*document.addEventListener("DOMContentLoaded", () =>{
         savelocalstorage()
         loadlocalstorage()
     })
@@ -264,7 +326,7 @@ cartShopBox.getElementsByClassName("cart-quantity")[0].addEventListener("change"
 
       function loadlocalstorage(){
         console.log(JSON.parse(localStorage.getItem("list")));
-      }
+      }*/
       
 /*
 //let likeBtn = document.querySelector("#btn-like")
