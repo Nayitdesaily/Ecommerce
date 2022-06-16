@@ -37,10 +37,10 @@ const cart = document.querySelector(".cart")
 const closeCart = document.getElementById("close-cart");
 
 shopping.addEventListener("click", () =>{
-    cart.classList.add("cart-active")
+    cart.classList.remove("cart-active")
 })
 closeCart.addEventListener("click", () =>{
-    cart.classList.remove("cart-active")
+    cart.classList.add("cart-active")
 })
 
 /*Shop Working */

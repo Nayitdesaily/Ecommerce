@@ -171,7 +171,7 @@ h5 {
     height: 100vh;
     position: fixed;
     top: 0;
-    right: 100%;
+    right: 0;
     z-index: 100;
     background-color: white;
     gap: 1rem;
@@ -180,7 +180,7 @@ h5 {
     transition: all 0.5sec ease;
 }
 .cart-active {
-    right: 0;
+    right: -100%;
 }
 .cart > h3 {
     font-size: 1.25rem;
