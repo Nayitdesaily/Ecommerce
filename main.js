@@ -267,4 +267,3 @@ for (let i=0; i<addCardBtn.length; i++){
         }
     })
 }
-
