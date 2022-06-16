@@ -137,7 +137,13 @@ for (let i=0; i<quantityValues.length; i++){
 }
 
 
+/*Agregar funcion a boton de compra*/
+let agregarCard = document.getElementsByClassName("icon-card")
+for(let i=0; i<agregarCard.length; i++){
+    let buttonAgregarCard = agregarCard[i];
+    buttonAgregarCard.addEventListener("click", agregarCardClicked)
 
+}
 
 /*Boton Proceder al pago */
 document.getElementsByClassName("btn-buy")[0].addEventListener("click", btnBuyClicked)
@@ -160,24 +166,8 @@ function quantityChanged (event){
     updateTotal();
 }
 
-/*Agregar funcion a boton de compra*/
-let agregarCard = document.getElementsByClassName("icon-card")
-for(let i=0; i<agregarCard.length; i++){
-    let buttonAgregarCard = agregarCard[i];
-    buttonAgregarCard.addEventListener("click", agregarCardClicked)
 
-}
-/*Agregar a carrito */
-function agregarCardClicked (event) {
-    let buttonAgregarCard = event.target
-    let choosenProduct = buttonAgregarCard.parentElement
-    let titleProduct = choosenProduct.getElementsByClassName("title-tipo")[0].innerText
-    let priceProductUnit = choosenProduct.getElementsByClassName("precio-product")[0].innerText
-    let imgProduct = choosenProduct.getElementsByClassName("img-card")[0 ].src
-    addProductShop(titleProduct,priceProductUnit,imgProduct)
-    updateTotal()
-}    
- 
+
 /*Actualizar Total */
 function updateTotal (){
     let cartContent = document.getElementsByClassName("cart-content")[0]
@@ -212,7 +202,17 @@ function btnBuyClicked (event) {
 
 
 
-
+/*Agregar a carrito */
+function agregarCardClicked (event) {
+    let buttonAgregarCard = event.target
+    let choosenProduct = buttonAgregarCard.parentElement
+    let titleProduct = choosenProduct.getElementsByClassName("title-tipo")[0].innerText
+    let priceProductUnit = choosenProduct.getElementsByClassName("precio-product")[0].innerText
+    let imgProduct = choosenProduct.getElementsByClassName("img-card")[0 ].src
+    addProductShop(titleProduct,priceProductUnit,imgProduct)
+    updateTotal()
+}    
+ 
 
 
 function addProductShop(titleProduct,priceProductUnit,imgProduct) {
