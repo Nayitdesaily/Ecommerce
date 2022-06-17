@@ -1,6 +1,7 @@
 "use strict"
 
 /*Header*/
+
 /*Menu Lateral Hamburguer*/
 
 const hamburguer = document.getElementById("hamburguer")
@@ -46,7 +47,7 @@ for (let i=0; i<removeCartButton.length; i++){
     button.addEventListener("click", removeCardItem)
 }
 
-/*Quantity Changes*/
+/*Quantity Valor*/
 let quantityValues = document.getElementsByClassName("cart-quantity")
 for (let i=0; i<quantityValues.length; i++){
     let value = quantityValues[i]
@@ -57,8 +58,9 @@ for (let i=0; i<quantityValues.length; i++){
 function removeCardItem (event){
     let buttonClicked = event.target
     buttonClicked.parentElement.remove();
+    updateTotal();
 }
-
+/*Quantity Cambiar*/
 function quantityChanged (event){
     let input = event.target
     if( input.value == 0 || input.value == NaN){
@@ -83,7 +85,7 @@ function updateTotal (){
         total = total + price * quantity;
     }
         document.getElementsByClassName("total-price")[0].innerText = "$" + total;
-    
+
 }
 
 
@@ -147,17 +149,18 @@ let fragmentoInnerHTML = ""
 smartphone.forEach ( (producto) => {
         fragmentoInnerHTML +=`
             <div class="cell-card">
-                <img src="./ASSETS/heart 1.svg" alt="" class="icon-card">
+                <img src="./ASSETS/heart 1.svg" alt="" class="icon-card" id="change-heart">
                 <img src="${producto.url}" alt="" class="img-card">
-                <div>
+                <div class="product-description">
                 <h4>${producto.marca}</h4>
                 <h3 class="title-tipo">${producto.tipo}</h3>
                 </div>
-                <div>
+                <div class="precio-description">
                 <small>Precio</small>
+                <p>$</p>
                 <h3 class="precio-product">${producto.precio}</h3>
                 </div>
-                <img src="./ASSETS/Group 56.svg" alt="" class="icon-card">
+                <img src="./ASSETS/Group 56.svg" alt="" class="shop-card">
             </div>
         `
     }
@@ -166,7 +169,7 @@ contenedor.innerHTML = fragmentoInnerHTML
 
 
 /*Add Card*/
-let agregarCard = document.getElementsByClassName("icon-card")
+let agregarCard = document.getElementsByClassName("shop-card")
 for(let i=0; i<agregarCard.length; i++){
     let buttonAgregarCard = agregarCard[i];
     buttonAgregarCard.addEventListener("click", agregarCardClicked)
@@ -231,10 +234,22 @@ cartShopBox.getElementsByClassName("cart-remove")[0].addEventListener("click", r
 cartShopBox.getElementsByClassName("cart-quantity")[0].addEventListener("change", quantityChanged)
 }
 
+
+
+heart = document.getElementById(id);
+    if(heart.src === './ASSETS/heart 1.svg'){
+        heart.src = './ASSETS/heart 2.svg';
+    }else {
+        heart.src = './ASSETS/heart 1.svg';
+    }
+
+
+
+
 /*Local Storage */
 
 
-let addCardBtn = document.getElementsByClassName("icon-card");
+let addCardBtn = document.getElementsByClassName("shop-card");
 let items = [ ];
 for (let i=0; i<addCardBtn.length; i++){
     addCardBtn[i].addEventListener("click", function(e){

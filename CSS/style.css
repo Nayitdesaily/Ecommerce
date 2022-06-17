@@ -225,6 +225,7 @@ h5 {
 .cart-remove:hover {
     color: var(--last-color);
 }
+
 .total {
     display: flex;
     justify-content: flex-end;
@@ -297,16 +298,86 @@ form {
 .filter-container > h3 {
     color: var(--last-color);
 }
-
-.cell-card {
+.card-container {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+    margin: 0.75rem;
+}
+.cell-card {
+    /*max-width: 500px;*/
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    border: 1px solid var(--third-color);
+    margin: 0 1rem;
+    box-shadow: 0 5px 5px var(--main-color);
+    position: relative;
 }
 
 .icon-card {
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.shop-card {
     width: 35px;
     cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 .img-card {
-    width: 300px;
+    width: calc(200px + 10vw);
+    height: calc(200px + 10vh);
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 1sec;
+}
+.img-card:hover{
+    transform: translateY(40px);
+;
+}
+.product-description {
+    border-top: 1px solid var(--third-color);
+    padding: 1rem 0 0.25rem 0.75rem;
+}
+.precio-description {
+    border-top: 1px solid var(--third-color);
+    padding: 0.25rem 0 0.25rem 0.75rem;
+    margin-top: 1rem;
+}
+.cell-card > div > small {
+    display: block;
+}
+.cell-card > div > p {
+    display: inline-block;
+}
+.precio-product {
+    display: inline-block;
+}
+.title-tipo,
+.precio-product {
+    font-size: calc(1.25rem + 0.25vw);
+}
+.cell-card > div > h4,
+.cell-card > div > small {
+    font-size: calc(.8rem + 0.25vw);
+}
+
+@media(min-width: 700px){
+
+    .card-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 3rem;
+    }
+    .cell-card{
+        max-width: 600px;
+    }
 }
