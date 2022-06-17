@@ -43,7 +43,7 @@ h5 {
     "main"
     "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: 60px 1fr 100px;
+    grid-template-rows: 60px 1fr 300px;
 }
 /*Nav*/
 #nav > img,
@@ -178,7 +178,7 @@ h5 {
     gap: 1rem;
     padding: 2rem 0.75rem;
     box-shadow: 0 5px 5px var(--last-color);
-    transition: all 0.5sec ease;
+    transition: 0.8s;
 }
 .cart-active {
     right: -100%;
@@ -330,17 +330,14 @@ form {
     right: 10px;
 }
 .img-card {
-    width: calc(200px + 10vw);
+    width: calc(200px + 5vw);
     height: calc(200px + 10vh);
     object-fit: contain;
     margin-left: auto;
     margin-right: auto;
-    transition: all 1sec;
 }
-.img-card:hover{
-    transform: translateY(40px);
-;
-}
+
+
 .product-description {
     border-top: 1px solid var(--third-color);
     padding: 1rem 0 0.25rem 0.75rem;
@@ -380,4 +377,49 @@ form {
     .cell-card{
         max-width: 600px;
     }
+}
+
+#footer {
+    background-color: var(--second-color);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 80px 0;
+    margin-top: 2rem;
+}
+#footer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#social {
+    align-items: center;
+}
+
+#footer a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    transition: 0.5s;
+}
+
+#footer a:hover {
+    transform: translateX(10px);
+}
+
+.social-icons > a > i {
+    color: var(--main-color);
+    font-size: 20px;
+    transition: 0.5s;
+}
+.social-icons > a > i:hover {
+    transform: translateY(-5px);
+}
+
+#footer > div > h4 {
+    transition: 0.6s;
+}
+
+#footer > div > h4:hover {
+    text-decoration: underline;
 }
