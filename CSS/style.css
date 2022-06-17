@@ -358,11 +358,11 @@ form {
 }
 .title-tipo,
 .precio-product {
-    font-size: calc(1.25rem + 0.25vw);
+    font-size: calc(1rem + 0.25vw);
 }
 .cell-card > div > h4,
 .cell-card > div > small {
-    font-size: calc(.8rem + 0.25vw);
+    font-size: calc(.7rem + 0.25vw);
 }
 
 @media(min-width: 700px){
@@ -418,8 +418,54 @@ form {
 
 #footer > div > h4 {
     transition: 0.6s;
+    font-size: 1.25rem;
 }
 
 #footer > div > h4:hover {
     text-decoration: underline;
+}
+
+@media(max-width: 600px){
+
+    #footer {
+        padding: 30px 1.5rem;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30% 70%;
+        grid-template-areas: 
+        "information social"
+        "product about";
+        gap: 1rem;
+    }
+
+    .our-information{
+        grid-area: information;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-us{
+        grid-area: about;
+        align-items: center;
+        justify-content: center;
+    }
+    .product{
+        grid-area: product;
+        align-items: center;
+        justify-content: center;
+    }
+    #social{
+        grid-area: social;
+        justify-content: center;
+        align-items: center;
+    }
+    .social-icons > a > i {
+        font-size: 15px; 
+    }
+    #footer a {
+        font-size: calc(0.75rem + 0.1vw);
+    }
+    #footer > div > h4 {
+        font-size: calc(0.9rem + 0.25vw);
+    }
+    
 }
